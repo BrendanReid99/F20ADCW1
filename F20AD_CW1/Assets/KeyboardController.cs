@@ -24,6 +24,8 @@ public class KeyboardController : MonoBehaviour
     private Color wrongSelectOnC = new Color(0.5f, 0f, 0f, 1f);
     private Color wrongSelectOffC = new Color(1f, 0f, 0f, 1f);
 
+    private GameObject characterA;
+
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +33,7 @@ public class KeyboardController : MonoBehaviour
         correctSelect = GameObject.Find("CorrectSelect");
         almostCorrectSelect = GameObject.Find("AlmostCorrectSelect");
         wrongSelect = GameObject.Find("WrongSelect");
+        characterA = GameObject.Find("A");
     }
 
     public void correctSelectOn()
@@ -90,9 +93,20 @@ public class KeyboardController : MonoBehaviour
         Check = false;
     }
 
-    public void CharacterColorChange()
+    public void ACharacterColorChange()
     {
-
+        if (correctSelectBool == true)
+        {
+            characterA.GetComponent<Image>().color = correctSelectOffC;
+        }
+        if (almostCorrectSelectBool == true)
+        {
+            characterA.GetComponent<Image>().color = almostCorrectSelectOffC;
+        }
+        if (wrongSelectBool == true)
+        {
+            characterA.GetComponent<Image>().color = wrongSelectOffC;
+        }
     }
 
 
