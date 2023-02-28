@@ -390,7 +390,6 @@ public class KeyboardController : MonoBehaviour
         }
     }
 
-
     public void OCharacterColorChange()
     {
         if (correctSelectBool == true)
