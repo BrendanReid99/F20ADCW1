@@ -2,9 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class KeyboardController : MonoBehaviour
 {
+
+    [SerializeField] public TextMeshProUGUI passwordGuessBox;
+
+
+    private string password1 = "";
+    private string password2 = "";
+    private string password3 = "";
+    private string password4 = "";
+    private string password5 = "";
+    private string password6 = "";
+    private string password7 = "";
+    private string password8 = "";
+    private string password9 = "";
+    private string password10 = "";
+
+    private bool password1full = false;
+    private bool password2full = false;
+    private bool password3full = false;
+    private bool password4full = false;
+    private bool password5full = false;
+    private bool password6full = false;
+    private bool password7full = false;
+    private bool password8full = false;
+    private bool password9full = false;
+    private bool password10full = false;
 
     public bool Check = false;
     public bool CheckTwo = false;
@@ -67,6 +93,7 @@ public class KeyboardController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         correctSelect = GameObject.Find("CorrectSelect");
         almostCorrectSelect = GameObject.Find("AlmostCorrectSelect");
         wrongSelect = GameObject.Find("WrongSelect");
@@ -109,6 +136,20 @@ public class KeyboardController : MonoBehaviour
 
     }
 
+    void Update()
+    {
+        passwordGuessBox.text = password1 + password2 + password3 + password4 + password5 + password6 + password7 + password8 + password9 + password10;
+    }
+
+
+
+    public void passwordGuess(string letter)
+    {
+
+    }
+
+
+
     public void correctSelectOn()
     {
         if (correctSelectBool == false && Check == false && CheckTwo == false)
@@ -127,6 +168,8 @@ public class KeyboardController : MonoBehaviour
 
         Check = false;
     }
+
+
 
     public void almostCorrectSelectOn()
     {
