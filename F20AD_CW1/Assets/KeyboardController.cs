@@ -8,11 +8,13 @@ public class KeyboardController : MonoBehaviour
 {
 
     [SerializeField] public TextMeshProUGUI passwordGuessBox;
+    [SerializeField] public TMP_InputField passwordEntryBox;
+    [SerializeField] private GameObject coverBanner;
+    [SerializeField] private GameObject winState;
 
-
-    private string password = "raccoon45";
+    private string password = "";
     private string passwordCheck = "";
-    private bool gameStarted = false;
+    
 
     private string password1 = "";
     private string password2 = "";
@@ -91,7 +93,8 @@ public class KeyboardController : MonoBehaviour
     private GameObject character9;
     private GameObject character0;
 
-
+    private bool keyboardOn = false;
+    //private bool keyboardOff = true;
 
 
     // Start is called before the first frame update
@@ -142,26 +145,53 @@ public class KeyboardController : MonoBehaviour
 
     void Update()
     {
-        passwordGuessBox.text = password1 + password2 + password3 + password4 + password5 + password6 + password7 + password8 + password9 + password10;
-        passwordCheck = password1 + password2 + password3 + password4 + password5 + password6 + password7 + password8 + password9 + password10;
-        if (passwordCheck == password)
+        passwordGuessBox.text = "" + password1 + password2 + password3 + password4 + password5 + password6 + password7 + password8 + password9 + password10;
+        passwordCheck = "" + password1 + password2 + password3 + password4 + password5 + password6 + password7 + password8 + password9 + password10;
+
+        //password = passwordEntryBox.text;
+        Debug.Log("password length - " + password.Length + "  password - " + password);
+        Debug.Log("password guess length - " + passwordCheck.Length + "  password guess - " + passwordCheck);
+
+        if (keyboardOn)
+        {
+            password = passwordEntryBox.text;
+        }
+
+        Debug.Log(password.Equals(passwordCheck));
+        if (password.Equals(passwordCheck) && password.Length > 1)
         {
             Debug.Log("You Win!!");
+            winState.SetActive(true);
         }
+        
+    }
+
+
+    public void keyboardOnMethod()
+    {
+        keyboardOn = true;
+        
+    }
+
+    public void keyboardOffMethod()
+    {
+        keyboardOn = false;
+        password.Remove(0, 1);
     }
 
     public void EnterPassword()
     {
-        if(gameStarted == false)
-        {
-
-        }
+        
+            Destroy(coverBanner);
+           
     }
 
+    /*
     public void OpenKeyboard()
     {
         TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, true, true, true, true);
     }
+    */
 
     public void passwordGuess(string letter)
     {
