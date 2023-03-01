@@ -10,6 +10,9 @@ public class KeyboardController : MonoBehaviour
     [SerializeField] public TextMeshProUGUI passwordGuessBox;
 
 
+    private string password = "raccoon45";
+    private string passwordCheck = "";
+
     private string password1 = "";
     private string password2 = "";
     private string password3 = "";
@@ -139,13 +142,72 @@ public class KeyboardController : MonoBehaviour
     void Update()
     {
         passwordGuessBox.text = password1 + password2 + password3 + password4 + password5 + password6 + password7 + password8 + password9 + password10;
+        passwordCheck = password1 + password2 + password3 + password4 + password5 + password6 + password7 + password8 + password9 + password10;
+        if (passwordCheck == password)
+        {
+            Debug.Log("You Win!!");
+        }
     }
 
 
 
     public void passwordGuess(string letter)
     {
+        if (password1full == false) 
+        {
+            password1 = letter;
+            password1full = true;
+        }
+        else if(password1full == true && password2full == false)
+        {
+            password2 = letter;
+            password2full = true;
+        }
+        else if(password2full == true && password3full == false)
+        {
+            password3 = letter;
+            password3full = true;
+        }
+        else if(password3full == true && password4full == false)
+        {
+            password4 = letter;
+            password4full = true;
+        }
+        else if(password4full == true && password5full == false)
+        {
+            password5 = letter;
+            password5full = true;
+        }
+        else if(password5full == true && password6full == false)
+        {
+            password6 = letter;
+            password6full = true;
+        }
+        else if(password6full == true && password7full == false)
+        {
+            password7 = letter;
+            password7full = true;
+        }
+        else if (password7full == true && password8full == false)
+        {
+            password8 = letter;
+            password8full = true;
+        }
+        else if(password8full == true && password9full == false)
+        {
+            password9 = letter;
+            password9full = true;
+        }
+        else if(password9full == true && password10full == false)
+        {
+            password10 = letter;
+            password10full = true;
+        }
 
+        if(passwordCheck == password)
+        {
+            Debug.Log("You Win!!");
+        }
     }
 
 
@@ -214,6 +276,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterA.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("a");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -230,6 +293,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterB.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("b");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -246,6 +310,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterC.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("c");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -262,6 +327,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterD.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("d");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -278,6 +344,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterE.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("e");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -294,6 +361,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterF.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("f");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -310,6 +378,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterG.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("g");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -326,6 +395,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterH.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("h");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -342,6 +412,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterI.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("i");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -358,6 +429,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterJ.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("j");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -374,6 +446,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterK.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("k");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -390,6 +463,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterL.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("l");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -406,6 +480,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterM.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("m");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -422,6 +497,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterN.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("n");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -438,6 +514,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterO.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("o");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -454,6 +531,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterP.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("p");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -470,6 +548,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterQ.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("q");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -486,6 +565,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterR.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("r");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -502,6 +582,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterS.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("s");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -518,6 +599,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterT.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("t");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -534,6 +616,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterU.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("u");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -550,6 +633,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterV.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("v");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -566,6 +650,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterW.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("w");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -582,6 +667,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterX.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("x");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -598,6 +684,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterY.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("y");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -614,6 +701,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             characterZ.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("z");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -630,6 +718,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             character0.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("0");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -646,6 +735,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             character1.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("1");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -662,6 +752,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             character2.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("2");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -678,6 +769,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             character3.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("3");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -694,6 +786,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             character4.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("4");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -710,6 +803,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             character5.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("5");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -726,6 +820,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             character6.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("6");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -742,6 +837,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             character7.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("7");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -758,6 +854,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             character8.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("8");
         }
         if (almostCorrectSelectBool == true)
         {
@@ -774,6 +871,7 @@ public class KeyboardController : MonoBehaviour
         if (correctSelectBool == true)
         {
             character9.GetComponent<Image>().color = correctSelectOffC;
+            passwordGuess("9");
         }
         if (almostCorrectSelectBool == true)
         {
