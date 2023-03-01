@@ -12,6 +12,7 @@ public class KeyboardController : MonoBehaviour
 
     private string password = "raccoon45";
     private string passwordCheck = "";
+    private bool gameStarted = false;
 
     private string password1 = "";
     private string password2 = "";
@@ -146,6 +147,14 @@ public class KeyboardController : MonoBehaviour
         if (passwordCheck == password)
         {
             Debug.Log("You Win!!");
+        }
+    }
+
+    public void EnterPassword()
+    {
+        if(gameStarted == false)
+        {
+
         }
     }
 
