@@ -50,8 +50,8 @@ public class KeyboardController : MonoBehaviour
 
     private GameObject wrongSelect;
     public bool wrongSelectBool = false;
-    private Color wrongSelectOnC = new Color(0.5f, 0f, 0f, 1f);
-    private Color wrongSelectOffC = new Color(1f, 0f, 0f, 1f);
+    private Color wrongSelectOnC = new Color(0f, 0f, 1f, 1f);
+    private Color wrongSelectOffC = new Color(0f, 0f, 0.5f, 1f);
 
     private GameObject characterA;
     private GameObject characterB;
@@ -149,7 +149,10 @@ public class KeyboardController : MonoBehaviour
         }
     }
 
-
+    public void OpenKeyboard()
+    {
+        TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, true, true, true, true);
+    }
 
     public void passwordGuess(string letter)
     {
@@ -210,8 +213,6 @@ public class KeyboardController : MonoBehaviour
         }
     }
 
-
-
     public void correctSelectOn()
     {
         if (correctSelectBool == false && Check == false && CheckTwo == false)
@@ -230,8 +231,6 @@ public class KeyboardController : MonoBehaviour
 
         Check = false;
     }
-
-
 
     public void almostCorrectSelectOn()
     {
