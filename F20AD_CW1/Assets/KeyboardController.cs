@@ -53,8 +53,8 @@ public class KeyboardController : MonoBehaviour
 
     private GameObject wrongSelect;
     public bool wrongSelectBool = false;
-    private Color wrongSelectOnC = new Color(0f, 0f, 1f, 1f);
-    private Color wrongSelectOffC = new Color(0f, 0f, 0.5f, 1f);
+    private Color wrongSelectOnC = new Color(0f, 0f, 0.5f, 1f);
+    private Color wrongSelectOffC = new Color(0f, 0f, 1f, 1f);
 
     private GameObject characterA;
     private GameObject characterB;
